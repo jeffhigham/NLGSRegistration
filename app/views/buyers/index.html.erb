@@ -1,0 +1,49 @@
+<h1>Listing buyers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Division</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buyers.each do |buyer| %>
+      <tr>
+        <td><%= buyer.name %></td>
+        <td><%= buyer.division %></td>
+        <td><%= buyer.address %></td>
+        <td><%= buyer.city %></td>
+        <td><%= buyer.state %></td>
+        <td><%= buyer.zip %></td>
+        <td><%= buyer.country %></td>
+        <td><%= buyer.phone %></td>
+        <td><%= buyer.fax %></td>
+        <td><%= buyer.email %></td>
+        <td><%= buyer.website %></td>
+        <td><%= buyer.description %></td>
+        <td><%= link_to 'Show', buyer %></td>
+        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+        <td><%= link_to 'Destroy', buyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buyer', new_buyer_path %>

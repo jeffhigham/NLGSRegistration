@@ -1,0 +1,49 @@
+<h1>Listing vendors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Division</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+        <td><%= vendor.division %></td>
+        <td><%= vendor.address %></td>
+        <td><%= vendor.city %></td>
+        <td><%= vendor.state %></td>
+        <td><%= vendor.zip %></td>
+        <td><%= vendor.country %></td>
+        <td><%= vendor.phone %></td>
+        <td><%= vendor.fax %></td>
+        <td><%= vendor.email %></td>
+        <td><%= vendor.website %></td>
+        <td><%= vendor.description %></td>
+        <td><%= link_to 'Show', vendor %></td>
+        <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+        <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vendor', new_vendor_path %>

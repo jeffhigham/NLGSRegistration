@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration ID:</strong>
+  <%= @registration.registration_id %>
+</p>
+
+<p>
+  <strong>Payment status:</strong>
+  <%= @registration.payment_status %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @registration.payment_type %>
+</p>
+
+<p>
+  <strong>Company Name:</strong>
+  <%= @registration.company.name %>
+</p>
+
+<p>
+  <strong>Company Address:</strong>
+  <%= @registration.company_address %>
+</p>
+
+<p>
+  <strong>Company Type:</strong>
+  <%= @registration.company.type %>
+</p>
+
+<p><strong>Company Industries:</strong> <br/>
+  <% @registration.company.industries.each do |i| %>
+  <%= "#{i.name} - #{i.description}" %><br/>
+  <% end %>
+</p>
+
+<p><strong>Contacts: </strong> <br/>
+  <% @registration.company.contacts.each do |c| %>
+  <%= "#{c.first_name} #{c.last_name} #{c.title} #{c.phone} #{c.email}  (primary? #{c.primary_contact})" %><br/>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>
