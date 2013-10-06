@@ -84,7 +84,7 @@ class RegistrationsController < ApplicationController
         
         companies_attributes: [ :id, :type, :company_type, :name, :division, :address,
         :city, :state, :zip,:country, :phone, :fax, :email, :website, :description,
-        contacts_attributes: [:id, :first_name, :last_name, :title, :email, :phone, :primary_contact],
+        contacts_attributes: [:id, :first_name, :last_name, :title, :email, :phone, :primary_contact, :_destroy],
         company_industries: []
         ]                
         )

@@ -1,3 +1,4 @@
+<fieldset>
 <div class="field">
   <%= f.label :first_name %><br>
   <%= f.text_field :first_name %>
@@ -21,4 +22,9 @@
 <div class="field">
   <%= f.label :primary_contact %><br>
   <%= f.check_box :primary_contact %>
-</div>
+</div><br/>
+
+<%= f.hidden_field :_destroy %>
+<%= link_to "remove", '#', class: "remove_fields" %>
+
+</fieldset>
