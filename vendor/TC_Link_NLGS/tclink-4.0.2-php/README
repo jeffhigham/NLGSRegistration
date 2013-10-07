@@ -1,0 +1,110 @@
+Some countries have regulations on the use of cryptographic libraries
+like the ones embedded in TCLink. It may be unlawful to download TCLink
+in these countries.
+
+
+                                TCLink v4.0.2
+                             PHP Implementation
+                       copyright (C) TrustCommerce 2010
+                         http://www.trustcommerce.com
+                         techsupport@trustcommerce.com
+
+                                July 31, 2013
+
+I. DESCRIPTION
+
+  TCLink is a thin client library to allow your e-commerce servers to
+connect to the TrustCommerce payment gateway easily and consistently.
+The protocol (which is the same across all platforms and languages) is
+well-documented in the Web Developer's Guide, so please consult it for
+any questions you may have about the protocol syntax itself.
+
+  If you are on a Windows environment, do not use this client.  Please
+download the COM object and use the COM functions available for Windows
+to access the TCLink object.  See here for more information:
+	http://www.php.net/manual/en/ref.com.php
+
+  TCLink was originally ported to PHP by Andrew Barnett of Data Clarity.
+Thanks go to both him (for the code) and his business (for their support
+of open source).
+
+
+II. LICENSE
+
+  TCLink for PHP is released under the GNU LGPL.  Please read LICENSE
+for details.
+
+
+III. REQUIREMENTS
+
+  You must be running PHP 4.0.4pl1 or higher.
+
+  You need to have the OpenSSL development libraries installed.  
+It is recommended you use the most recent version provided by the
+vendor for PCI reasons.
+
+
+  Besides the normal PHP install, you'll need the php-devel package,
+which contains files needed for building PHP modules.  You can tell
+if this package is installed if the binary "phpize" is in your path.
+
+ 
+IV. BUILDING
+
+  At the root directory of this archive, execute the following:
+
+    phpize
+ 
+  Afterwards, type the following commands:
+
+    ./configure --with-ssl
+    make
+
+  Note 1:  On some systems, the SSL library may be in a different place, such as /usr/lib64.
+  In that case, type the following commands instead:
+
+    ./configure --with-ssl=/usr/lib64
+    make
+  
+  If you are not sure where your SSL library is installed, contact your system administrator or hosting provider
+  for more information.
+  
+  If the module builds without errors and you have access to PHP at the command line, 
+  you can test it with the following command:
+
+    php -d extension=modules/tclink.so tctest.php
+
+  This script will run a test transaction and print the results.
+
+
+V. INSTALLATION
+
+  If you have root access to the machine, you will probably want to
+install TCLink as a global extension.  You can do this by copying the
+module library (modules/tclink.so) to your PHP extensions directory
+(typically /usr/lib/php5).  Your extensions directory is defined by the
+"extension_dir" directive in php.ini.
+
+  Edit php.ini (typically found in /etc) and add the following line:
+
+    extension=tclink.so
+
+  Restart your webserver, and all PHP scripts will have access to TCLink.
+
+  If you can't or don't want to install the module system wide, you can
+still load it manually in each script that needs to access it through
+the dl() call.  See the top of tctest.php for an example.
+
+
+VI. USAGE
+
+  The tctest.php script shows a simple example of running transactions
+through the TCLink API.  A more complex example is contained in
+tcexample.php.  For further information, please consult the TC
+Developer's Guide, located in the doc subdirectory.
+
+  The curltest.php script shows a simple example of running transactions
+through the HTTPS post, as describd in the Developer's Guide.  It is 
+provided here in as a conveinence to users who are unable to install
+TCLink and have Curl available in their installation.  
+

@@ -1,0 +1,95 @@
+have_library: checking for CRYPTO_lock() in -lcrypto... -------------------- yes
+
+"gcc-4.2 -o conftest -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/x86_64-darwin12.3.0 -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/ruby/backward -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -O3 -I/opt/sm/pkg/active/include -fno-common -pipe conftest.c  -L. -L/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/lib -L. -L/opt/sm/pkg/active/lib     -lruby.1.9.1  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/x86_64-darwin12.3.0 -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/ruby/backward -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -O3 -I/opt/sm/pkg/active/include -fno-common -pipe conftest.c  -L. -L/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/lib -L. -L/opt/sm/pkg/active/lib     -lruby.1.9.1 -lcrypto  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:4: error: ‘CRYPTO_lock’ undeclared (first use in this function)
+conftest.c:4: error: (Each undeclared identifier is reported only once
+conftest.c:4: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))CRYPTO_lock; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/x86_64-darwin12.3.0 -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/ruby/backward -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -O3 -I/opt/sm/pkg/active/include -fno-common -pipe conftest.c  -L. -L/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/lib -L. -L/opt/sm/pkg/active/lib     -lruby.1.9.1 -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { CRYPTO_lock(); return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+
+have_library: checking for SSL_connect() in -lssl... -------------------- yes
+
+"gcc-4.2 -o conftest -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/x86_64-darwin12.3.0 -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/ruby/backward -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -O3 -I/opt/sm/pkg/active/include -fno-common -pipe conftest.c  -L. -L/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/lib -L. -L/opt/sm/pkg/active/lib    -lcrypto  -lruby.1.9.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:4: error: ‘SSL_connect’ undeclared (first use in this function)
+conftest.c:4: error: (Each undeclared identifier is reported only once
+conftest.c:4: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))SSL_connect; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/x86_64-darwin12.3.0 -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1/ruby/backward -I/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/include/ruby-1.9.1 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -O3 -I/opt/sm/pkg/active/include -fno-common -pipe conftest.c  -L. -L/Users/jeffh/.rvm/rubies/ruby-1.9.3-p448/lib -L. -L/opt/sm/pkg/active/lib    -lcrypto  -lruby.1.9.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { SSL_connect(); return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+

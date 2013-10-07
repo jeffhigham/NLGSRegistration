@@ -1,0 +1,20 @@
+Revision history for Perl extension TCLink.
+
+4.0.1 Wed Jul 31 19:44:00 2013
+	- Update CA cert
+
+4.0.0 Thu Nov 18 17:01:00 2010
+	- Backport changes from C version to this version.
+
+3.4.4 Fri July 13 10:52:00 2007
+	- Backport changes from C version to this version.
+
+3.4  Fri Jul 18 14:20:00 2003
+	- Upgrade to 3.4 version of C backend
+
+3.3  Mon Jan  7 20:40:54 2002
+	- Upgrade to 3.3 version of C backend
+
+3.25  Mon Oct 22 16:32:16 2001
+	- Initial CPAN release
+

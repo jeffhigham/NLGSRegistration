@@ -1,0 +1,10 @@
+# $Id: Makefile.in,v 1.5 2010-11-19 02:36:43 johnny Exp $
+
+LTLIBRARY_NAME        = libtclink.la
+LTLIBRARY_SOURCES     = tclink.c php_tclink.c mem.c validate.c verisign.c
+LTLIBRARY_SHARED_NAME = tclink.la
+LTLIBRARY_SHARED_LIBADD  = $(TCLINK_SHARED_LIBADD)
+
+CFLAGS	=	@CFLAGS@ @DEFS@ 
+
+include $(top_srcdir)/build/dynlib.mk
