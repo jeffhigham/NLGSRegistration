@@ -1,0 +1,24 @@
+<div class="field">
+  <%= f.label 'Credit Card Name' %> 
+  <%= f.text_field :cc_name %>
+</div>
+
+<div class="field">
+  <%= f.label 'Credit Card#' %> 
+  <%= f.text_field :cc_number %>
+</div>
+
+<div class="field">
+  <%= f.label 'Expiration Month'  %> 
+  <%= f.text_field :cc_exp_month, size: 2 %>
+</div>
+
+<div class="field">
+  <%= f.label 'Expiration Year'  %>
+  <%= f.text_field :cc_exp_year, size: 2 %>
+</div>
+
+<div class="field">
+  <%= f.label 'Code'  %>
+  <%= f.text_field :cc_code, size: 3 %>
+</div>

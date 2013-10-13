@@ -82,7 +82,8 @@ class RegistrationsController < ApplicationController
 
         :registration_id, :payment_status, :payment_type, :pop_spaces, :pop_display_type,
         :proto_spaces, :proto_display_type, :via_sponsor, :lg_priorities, :pet_priorities,
-        :acknowledgement, :vendor_loyalty_discount, :pay_in_full, :payment_method,
+        :acknowledgement, :vendor_loyalty_discount, :pay_in_full, :payment_method, :cc_number,
+        :cc_exp_month, :cc_exp_year, :cc_code, :cc_name,
         
         companies_attributes: [ :id, :type, :company_type, :name, :division, :address,
         :city, :state, :zip,:country, :phone, :fax, :email, :website, :description,

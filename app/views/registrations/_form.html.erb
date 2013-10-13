@@ -85,24 +85,10 @@
     <%= f.text_field :pet_priorities, class: "droppable" %>
   </div><br/>
 
-<%= render 'pet_product_categories' %>
+<%= render 'pet_product_categories'%>
 
 </fieldset>
 <!-- Pet Products Categories End -->
-
-<!-- Conference Terms Start -->
-<fieldset>
-  <legend>Conference Terms, Conditions, Deposit requirements, and Cancellation terms</legend>
-  <p>Payment Policy: $1000 deposit must accompany registration form to hold your priority scheduling position. 2nd payment of $1000 is due by Nov. 1, prior to year of NLGS event. Remainder of balance is due by February 1, the year of the NLGS event. Registrations returned without deposits are not considered registered and your priority position will not be assigned until deposit or full payment is received. Registration deadline is May 15, the year of the NLGS event. Registrations received after May 15 subject to $100 late fee. Participants with outstanding balances will be denied passwords to select buyers and access to the event. Cancellations must be submitted in writing and are subject to a $300 administrative fee if requested by October 30, prior to year of NLGS event. No refunds for incidental registration modifications. Any request to cancel after this date will not be honored and no monies will be refunded. </p>
-
-
-<h3>Acknowledgement</h3>
-
-<strong>I have read and accept the terms &amp; conditions on this registration form and the <a href="http://nlgshow.com/sites/all/themes/nlgshow_core/VendorConditions.html" target="_blank">"Rules and Regulations"</a>.</strong><br/>
-<%= f.label 'I Accept' %>
-<%= f.check_box :acknowledgement %><br/>
-</fieldset>
-<!-- Conference Terms End -->
 
 <!-- Loyalty Discount Start -->
 <fieldset>
@@ -153,8 +139,25 @@ If you select to pay by credit card, you will be taken to a secure page where yo
 <br/><em>*Questions?</em> &nbsp;   Contact us at: 
 PO Box 1771 Monument, CO 80132 • 888.316.0226 • 719.488.8168 • www.nlgshow.com • <a href="http://www.nlgshow.com/contact" target="_blank">email</a></p>
 
+<%= render 'credit_card_fields', f: f %>
+
 </fieldset>
 <!-- Payment End -->
+
+<!-- Conference Terms Start -->
+<fieldset>
+  <legend>Conference Terms, Conditions, Deposit requirements, and Cancellation terms</legend>
+  <p>Payment Policy: $1000 deposit must accompany registration form to hold your priority scheduling position. 2nd payment of $1000 is due by Nov. 1, prior to year of NLGS event. Remainder of balance is due by February 1, the year of the NLGS event. Registrations returned without deposits are not considered registered and your priority position will not be assigned until deposit or full payment is received. Registration deadline is May 15, the year of the NLGS event. Registrations received after May 15 subject to $100 late fee. Participants with outstanding balances will be denied passwords to select buyers and access to the event. Cancellations must be submitted in writing and are subject to a $300 administrative fee if requested by October 30, prior to year of NLGS event. No refunds for incidental registration modifications. Any request to cancel after this date will not be honored and no monies will be refunded. </p>
+
+
+<h3>Acknowledgement</h3>
+
+<strong>I have read and accept the terms &amp; conditions on this registration form and the <a href="http://nlgshow.com/sites/all/themes/nlgshow_core/VendorConditions.html" target="_blank">"Rules and Regulations"</a>.</strong><br/>
+<%= f.label 'I Accept' %>
+<%= f.check_box :acknowledgement %><br/>
+</fieldset>
+<!-- Conference Terms End -->
+
 
   <div class="actions">
     <%= f.submit %>
