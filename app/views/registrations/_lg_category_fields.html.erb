@@ -1,0 +1,40 @@
+<div class="field">
+  <label>Priority #1<small>required</small></label><br>
+  <%= text_field 'lg_priority', '1', :"required" => "true", 
+  :'placeholder' => "001", class: "lg-priority"
+  %>
+  <small class="error">Please provide priority #1</small>
+</div><br/>
+
+<div class="field">
+  <label>Priority #2<small>required</small></label><br>
+  <%= text_field 'lg_priority','2', :"required" => "true", 
+  :'placeholder' => "005" , class: "lg-priority"
+  %>
+  <small class="error">Please provide priority #2</small>
+</div><br/>
+
+<div class="field">
+  <label>Priority #3<small>required</small></label><br>
+  <%= text_field 'lg_priority', '3',:"required" => "true", 
+  :'placeholder' => "009", class: "lg-priority" 
+  %>
+  <small class="error">Please provide priority #3</small>
+</div><br/>
+
+<div class="field">
+  <label>Priority #4<small>required</small></label><br>
+  <%= text_field 'lg_priority', '4', :"required" => "true", 
+  :'placeholder' => "013", class: "lg-priority" 
+  %>
+  <small class="error">Please provide priority #4</small>
+</div><br/>
+
+<div class="field">
+  <label>Priority #5<small>required</small></label><br>
+  <%= text_field 'lg_priority', '5',:"required" => "true", 
+  :'placeholder' => "022", class: "lg-priority"
+  %>
+  <small class="error">Please provide priority #5</small>
+</div><br/>
+<%= f.hidden_field :lg_priorities %>

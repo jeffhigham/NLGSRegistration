@@ -1,30 +1,40 @@
-<fieldset>
 <div class="field">
-  <%= f.label :first_name %><br>
-  <%= f.text_field :first_name %>
+  <label>First Name <small>required</small></label><br>
+  <%= f.text_field :first_name, :"required" => "true", :'placeholder' => "Larry" %>
+  <small class="error">Please provide a first name for this contact.</small>
 </div>
+
 <div class="field">
-  <%= f.label :last_name %><br>
-  <%= f.text_field :last_name %>
+  <label>Last Name <small>required</small></label><br>
+  <%= f.text_field :last_name, :"required" => "true", :'placeholder' => "Jones" %>
+  <small class="error">Please provide a last name for this contact.</small>
 </div>
+
 <div class="field">
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
+  <label>Title <small>required</small></label><br>
+  <%= f.text_field :title, :"required" => "true", :'placeholder' => "Sr. Manager" %>
+  <small class="error">Please provide a title for this contact.</small>
 </div>
+
 <div class="field">
-  <%= f.label :phone %><br>
-  <%= f.text_field :phone %>
+  <label>Title <small>required</small></label><br>
+  <%= f.text_field :phone, :"required" => "true", :'placeholder' => "(555) 555-5555" %>
+  <small class="error">Please provide a phone number for this contact.</small>
 </div>
+
 <div class="field">
-  <%= f.label :email %><br>
-  <%= f.text_field :email %>
+  <label>Title <small>required</small></label><br>
+  <%= f.text_field :email, :"required" => "true", :'placeholder' => "larry.jones@company123.com" %>
+  <small class="error">Please provide an email address for this contact.</small>
 </div>
+
 <div class="field">
-  <%= f.label :primary_contact %><br>
-  <%= f.check_box :primary_contact %>
+  <label>Is This Person The Primary Contact?<small>required</small></label><br>
+  <%= f.radio_button :primary_contact, false %> 
+  <%= label :primary_contact, 'No', value: false %>
+  <%= f.radio_button :primary_contact, true %>
+  <%= label :primary_contact, 'Yes', value: true %>
 </div><br/>
 
 <%= f.hidden_field :_destroy %>
-<%= link_to "remove", '#', class: "remove_fields" %>
-
-</fieldset>
+<%= link_to "Remove This Contact", '#', class: "remove_fields" %>

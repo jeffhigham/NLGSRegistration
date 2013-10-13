@@ -1,77 +1,133 @@
 
-<fieldset>
-  <legend>Company Type</legend>
-  <%= f.select :type, options_for_select( 
-    CompanyType.all.collect {|t| [t.description, t.class_name] }, @registration.company.type
-    ) %>
-</fieldset>
+<!-- Registration Type & Industries -->
+<div class="row">
+  <div class="large-6 columns">
+    <fieldset>
+      <legend>Registration Type</legend>
+      <%= f.select :type, options_for_select( 
+        CompanyType.all.collect {|t| [t.description, t.class_name] }, @registration.company.type
+        ), :"required" => "true" %>
+      <small class="error">Please select your registration type.</small>
+    </fieldset>
+  </div>
+  <div class="large-6 columns">
+    <fieldset>
+      <legend>Industry</legend>
+      <%= 
+        select_tag "company_industries",
+          options_for_select(Industry.all.collect {|i| [i.name, i.id]}, 
+          @registration.company.company_industries.all.collect {|i| i.industry_id} ),
+          :multiple => true, :"required" => "true"
+      %>
+      <small class="error">Please select one or more industries.</small>
+    </fieldset>
+  </div>
+</div>
+<!-- End Registration Type & Industries -->
 
-<fieldset>
-  <legend>Industry</legend>
-  <%= 
-    select_tag "company_industries",
-      options_for_select(Industry.all.collect {|i| [i.name, i.id]}, 
-      @registration.company.company_industries.all.collect {|i| i.industry_id} ),
-      :multiple => true
-  %>
-</fieldset>
-
+<!-- Company Information -->
+<div class="row">
+  <div class="large-12 columns">
 <fieldset>
   <legend>Company Information</legend>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Company Name <small>required</small></label><br>
+      <%= f.text_field :name, :"required" => "true", :'placeholder' => "Company 123" %>
+      <small class="error">Please provide a company name.</small>
+    </div>
+    <div class="large-6 columns">
+      <label>Division <small>required</small></label><br>
+      <%= f.text_field :division, :"required" => "true", :'placeholder' => "Company Division" %>
+      <small class="error">Please provide a company division.</small>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :division %><br>
-    <%= f.text_field :division %>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Address <small>required</small></label><br>
+      <%= f.text_field :address, :"required" => "true", :'placeholder' => "12345 Some Street" %>
+      <small class="error">Please provide a company address.</small>
+    </div>
+
+    <div class="large-6 columns">
+      <label>City <small>required</small></label><br>
+      <%= f.text_field :city, :"required" => "true", :'placeholder' => "Chicago" %>
+      <small class="error">Please provide a city.</small>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+
+  <div class="row">
+    <div class="large-4 columns">
+      <label>State <small>required</small></label><br>
+      <%= f.text_field :state, :"required" => "true", :'placeholder' => "IL", size: 2 %>
+      <small class="error">Please provide a state.</small>
+    </div>
+
+    <div class="large-4 columns">
+      <label>Zip Code <small>required</small></label><br>
+      <%= f.text_field :zip, :"required" => "true", :'placeholder' => "60601", size: 8 %>
+      <small class="error">Please provide a state.</small>
+    </div>
+
+    <div class="large-4 columns">
+      <label>Country <small>required</small></label><br>
+      <%= f.text_field :country, :"required" => "true", :'placeholder' => "USA" %>
+      <small class="error">Please provide a country.</small>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <label>Company Phone <small>required</small></label><br>
+      <%= f.text_field :phone, :"required" => "true", :'placeholder' => "(555) 555-5555" %>
+      <small class="error">Please provide a company phone number.</small>
+    </div>
+
+    <div class="large-3 columns">
+      <label>Company Fax <small>required</small></label><br>
+      <%= f.text_field :fax, :"required" => "true", :'placeholder' => "(555) 555-5555" %>
+      <small class="error">Please provide a company fax number.</small>
+    </div>
+
+    <div class="large-3 columns">
+      <label>Company Email <small>required</small></label><br>
+      <%= f.text_field :email, :"required" => "true", :'placeholder' => "info@company123.com" %>
+      <small class="error">Please provide a company email address.</small>
+    </div>
+
+    <div class="large-3 columns">
+      <label>Company Website <small>required</small></label><br>
+      <%= f.text_field :website, :"required" => "true", :'placeholder' => "www@company123.com" %>
+      <small class="error">Please provide a company website address.</small>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Company Description <small>required</small></label><br>
+      <%= f.text_area :description, :"required" => "true", :'placeholder' => "Tell us a little about your company." %>
+      <small class="error">Please provide a company description.</small>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :fax %><br>
-    <%= f.text_field :fax %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %> </div>
+
 </fieldset>
+</div>
+</div>
+
+<!-- End Company Information -->
+
 
 <!-- Contact Info -->
-<fieldset>
-  <legend>Contact Info</legend>
-  <%= f.fields_for :contacts, @contacts do |builder| %>
-    <%= render 'contact_fields', f: builder %>
-  <% end %><br/>
-  <%= link_to_add_contact "Add Contact", f, :contacts %>
-</fieldset>
+<div class="row">
+  <div class="large-12 columns">
+    <fieldset>
+      <legend>Primary Contact Info</legend>
+      <%= f.fields_for :contacts, @contacts do |builder| %>
+        <%= render 'contact_fields', {f: builder, primary: true} %>
+      <% end %><br/>
+      <%= link_to_add_contact "Add Contact", f, :contacts %>
+    </fieldset>
+  </div>
+</div>

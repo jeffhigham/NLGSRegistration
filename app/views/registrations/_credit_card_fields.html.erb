@@ -1,24 +1,29 @@
 <div class="field">
-  <%= f.label 'Credit Card Name' %> 
-  <%= f.text_field :cc_name %>
+  <label>Credit Card Holder's Name <small>required</small></label><br>
+  <%= f.text_field :cc_name, :"required" => "true", :'placeholder' => "Joseph M. Larson" %>
+  <small class="error">Please provide the name associated with this credit card.</small>
 </div>
 
 <div class="field">
-  <%= f.label 'Credit Card#' %> 
-  <%= f.text_field :cc_number %>
+  <label>Credit Card Number <small>required</small></label><br>
+  <%= f.text_field :cc_number, :"required" => "true", :'placeholder' => "4012888888881881" %>
+  <small class="error">Please provide the name credit card number.</small>
 </div>
 
 <div class="field">
-  <%= f.label 'Expiration Month'  %> 
-  <%= f.text_field :cc_exp_month, size: 2 %>
+  <label>Credit Expiration Month <small>required</small></label><br>
+  <%= f.text_field :cc_exp_month, :"required" => "true", :'placeholder' => "03" %>
+  <small class="error">Please provide the credit card expiration month.</small>
 </div>
 
 <div class="field">
-  <%= f.label 'Expiration Year'  %>
-  <%= f.text_field :cc_exp_year, size: 2 %>
+  <label>Credit Expiration Year <small>required</small></label><br>
+  <%= f.text_field :cc_exp_year, :"required" => "true", :'placeholder' => "2016" %>
+  <small class="error">Please provide the credit card expiration year.</small>
 </div>
 
 <div class="field">
-  <%= f.label 'Code'  %>
-  <%= f.text_field :cc_code, size: 3 %>
+  <label>Credit Card CVV Code <small>required</small></label><br>
+  <%= f.text_field :cc_code, :"required" => "true", :'placeholder' => "321" %>
+  <small class="error">Please provide the credit card CVV code from the back of the card.</small>
 </div>
