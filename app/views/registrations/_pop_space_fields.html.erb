@@ -1,0 +1,24 @@
+
+
+<fieldset>
+  <legend>Additional Point of Purchase Spaces: $100 each</legend>
+  <%= f.label 'Number of additional POP spaces' %><br/>
+  <%= f.select :pop_spaces, options_for_select( 
+    [
+      ["None", 0],
+      ["One Add'l POP (2'x2')", 1],
+      ["Two Add'l POP (2'x4')", 2],
+      ["Three Add'l POP (2'x6')", 3],
+    ],
+    @registration.pop_spaces
+    ) %><br/>
+
+  <%= f.label 'Select Display Type for additional POP spaces' %><br/>
+  <%= f.select :pop_display_type, options_for_select( 
+    [
+      ["Table", "table"],
+      ["Floor", "floor"],
+    ],
+    @registration.pop_display_type
+    ) %>
+</fieldset>

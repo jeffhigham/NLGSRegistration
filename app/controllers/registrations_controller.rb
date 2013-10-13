@@ -80,13 +80,15 @@ class RegistrationsController < ApplicationController
     def registration_params
       params.require(:registration).permit(
 
-        :registration_id, :payment_status, :payment_type,
+        :registration_id, :payment_status, :payment_type, :pop_spaces, :pop_display_type,
+        :proto_spaces, :proto_display_type, :via_sponsor, :lg_priorities, :pet_priorities,
+        :acknowledgement, :vendor_loyalty_discount, :pay_in_full, :payment_method,
         
         companies_attributes: [ :id, :type, :company_type, :name, :division, :address,
         :city, :state, :zip,:country, :phone, :fax, :email, :website, :description,
         contacts_attributes: [:id, :first_name, :last_name, :title, :email, :phone, :primary_contact, :_destroy],
         company_industries: []
-        ]                
-        )
+        ]
+      )
     end
 end

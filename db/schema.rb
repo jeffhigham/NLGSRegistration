@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131005122801) do
+ActiveRecord::Schema.define(version: 20131013021358) do
 
   create_table "companies", force: true do |t|
     t.string   "type"
@@ -63,12 +63,37 @@ ActiveRecord::Schema.define(version: 20131005122801) do
     t.datetime "updated_at"
   end
 
+  create_table "pop_spaces", force: true do |t|
+    t.string   "display_type"
+    t.text     "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prototype_spaces", force: true do |t|
+    t.string   "display_type"
+    t.text     "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "registrations", force: true do |t|
     t.string   "registration_id"
     t.string   "payment_status"
     t.string   "payment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "via_sponsor"
+    t.integer  "pop_spaces"
+    t.string   "pop_display_type"
+    t.integer  "proto_spaces"
+    t.string   "proto_display_type"
+    t.string   "lg_priorities"
+    t.string   "pet_priorities"
+    t.boolean  "acknowledgement",         default: false
+    t.boolean  "vendor_loyalty_discount", default: false
+    t.boolean  "pay_in_full",             default: true
+    t.string   "payment_method",          default: "credit_card"
   end
 
 end
