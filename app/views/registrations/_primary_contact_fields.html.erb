@@ -1,0 +1,49 @@
+<div clas="row">
+  
+  <div class="large-6 columns">
+    <strong>Senior (Primary) Contact Info</strong>
+    <p>Confirmation of registration will be sent to this contact via email</p>
+    <strong>Senior (Primary) Contact Registration Fee:</strong>
+    <p>$3,975</p>
+    <small>Includes Senior attendee, one, 2’x 6’ Point of Purchase (POP) space and majority of food &amp; beverage while on-site.</small>
+  </div>
+
+  <div class="large-6 columns">
+    
+    <div class="row">
+      <div class="large-4 columns">
+        <label>First Name <small>required</small></label><br>
+        <%= f.text_field :first_name, :"required" => "true", :'placeholder' => "Larry" %>
+        <small class="error">Please provide a first name for this contact.</small>
+      </div>
+
+      <div class="large-4 columns">
+        <label>Last Name <small>required</small></label><br>
+        <%= f.text_field :last_name, :"required" => "true", :'placeholder' => "Jones" %>
+        <small class="error">Please provide a last name for this contact.</small>
+      </div>
+      <div class="large-4 columns">
+        <label>Title <small>required</small></label><br>
+        <%= f.text_field :title, :"required" => "true", :'placeholder' => "Sr. Manager" %>
+        <small class="error">Please provide a title for this contact.</small>
+      </div>
+    
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Title <small>required</small></label><br>
+        <%= f.text_field :phone, :"required" => "true", :'placeholder' => "(555) 555-5555" %>
+        <small class="error">Please provide a phone number for this contact.</small>
+      </div>
+
+      <div class="large-6 columns">
+        <label>Title <small>required</small></label><br>
+        <%= f.text_field :email, :"required" => "true", :'placeholder' => "larry.jones@company123.com" %>
+        <small class="error">Please provide an email address for this contact.</small>
+      </div>
+      <%= f.hidden_field :primary_contact, value: true %>
+    </div>
+  
+  </div>  
+</div>

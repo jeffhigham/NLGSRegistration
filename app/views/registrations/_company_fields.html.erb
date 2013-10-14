@@ -125,9 +125,20 @@
     <fieldset>
       <legend>Primary Contact Info</legend>
       <%= f.fields_for :contacts, @contacts do |builder| %>
-        <%= render 'contact_fields', {f: builder, primary: true} %>
+        <%= render 'primary_contact_fields', {f: builder} %>
+      <% end %>
+    </fieldset>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="large-12 columns">
+    <fieldset>
+      <legend>Additional Contact Info</legend>
+      <%= f.fields_for :contacts, @contacts do |builder| %>
+        <%= render 'contact_fields', {f: builder} %>
       <% end %><br/>
       <%= link_to_add_contact "Add Contact", f, :contacts %>
     </fieldset>
   </div>
-</div>
+</div> -->

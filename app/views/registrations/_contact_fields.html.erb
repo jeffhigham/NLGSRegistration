@@ -28,13 +28,7 @@
   <small class="error">Please provide an email address for this contact.</small>
 </div>
 
-<div class="field">
-  <label>Is This Person The Primary Contact?<small>required</small></label><br>
-  <%= f.radio_button :primary_contact, false %> 
-  <%= label :primary_contact, 'No', value: false %>
-  <%= f.radio_button :primary_contact, true %>
-  <%= label :primary_contact, 'Yes', value: true %>
-</div><br/>
+<%= f.hidden_field :primary_contact, value: false %><br/>
 
 <%= f.hidden_field :_destroy %>
 <%= link_to "Remove This Contact", '#', class: "remove_fields" %>
