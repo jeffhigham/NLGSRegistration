@@ -1,0 +1,2 @@
+class SecondaryContact < Contact
+end

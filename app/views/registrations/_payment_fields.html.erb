@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="large-12 columns">
+    <fieldset>
+      <legend>Payment</legend>
+      <i>Mastercard, Visa, Discover accepted. Sorry, no American Express cards accepted.</i>
+
+    <p>If you select to pay by check, please use the above information, and the amount from your running total in the upper right-hand corner.
+
+    If you select to pay by credit card, you will be taken to a secure page where you can enter your payment details. We utilize industry standard security methods and the latest in anti-fraud technology.</p>
+
+    <%= f.label 'At this time would you like to pay in full or make a deposit?' %>
+    <div class="field">
+    <%= f.radio_button :pay_in_full, true %>
+    <%= label :pay_in_full, 'Pay in Full', value: true %><br/>
+    <%= f.radio_button :pay_in_full, false %> 
+    <%= label :pay_in_full, 'Make a Deposit', value: false %>
+    </div><br/>
+
+    <%= f.label 'Select Payment Method.' %>
+    <div class="field">
+    <%= f.radio_button :payment_method, 'check' %>
+    <%= label :payment_method, "Check Please send a check so we may assign your Vendor ID Scheduling Priority Number.", value: 'check' %><br/>
+    <%= f.radio_button :payment_method, 'credit_card' %> 
+    <%= label :payment_method, "Credit Card A Vendor ID Scheduling Priority Number will be assigned upon the processing of this payment.", value: 'credit_card' %>
+    </div>
+    <h3>Check Payment Notice</h3>
+    <p>Please send your check to: NLGS P.O. Box 1771 Monument, CO 80132 Tax id#84-1287178</p>
+
+    <h3>Credit Card Payment Notice</h3>
+    <p>After you submit this registration form, please contact NLGS by phone to process your credit card payment.</p>
+
+    <h3>Please Note</h3>
+    <p><strong> Once you have clicked "Submit Vendor Registration", you will no longer be able to return to this form.</strong>
+    <br/><em>*Questions?</em> &nbsp;   Contact us at: 
+    PO Box 1771 Monument, CO 80132 • 888.316.0226 • 719.488.8168 • www.nlgshow.com • <a href="http://www.nlgshow.com/contact" target="_blank">email</a></p>
+
+    <%= render 'credit_card_fields', f: f %>
+
+    </fieldset>
+  </div>
+</div>
