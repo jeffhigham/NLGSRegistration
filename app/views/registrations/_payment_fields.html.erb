@@ -8,21 +8,30 @@
 
     If you select to pay by credit card, you will be taken to a secure page where you can enter your payment details. We utilize industry standard security methods and the latest in anti-fraud technology.</p>
 
-    <%= f.label 'At this time would you like to pay in full or make a deposit?' %>
-    <div class="field">
-    <%= f.radio_button :pay_in_full, true %>
-    <%= label :pay_in_full, 'Pay in Full', value: true %><br/>
-    <%= f.radio_button :pay_in_full, false %> 
-    <%= label :pay_in_full, 'Make a Deposit', value: false %>
-    </div><br/>
-
-    <%= f.label 'Select Payment Method.' %>
-    <div class="field">
-    <%= f.radio_button :payment_method, 'check' %>
-    <%= label :payment_method, "Check Please send a check so we may assign your Vendor ID Scheduling Priority Number.", value: 'check' %><br/>
-    <%= f.radio_button :payment_method, 'credit_card' %> 
-    <%= label :payment_method, "Credit Card A Vendor ID Scheduling Priority Number will be assigned upon the processing of this payment.", value: 'credit_card' %>
+    <div class="row">
+        <div class="large-4 columns">
+          <%= f.label 'At this time would you like to pay in full or make a deposit?' %>
+            <%= f.select :pay_in_full, options_for_select([
+            ['Pay in full', true],
+            ['Make a deposit', false]
+            ],
+          f.object.pay_in_full
+          ), {:"required" => "true"} %>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="large-4 columns">
+          <%= f.label 'Select Payment Method.' %>
+            <%= f.select :payment_method, options_for_select([
+            ['Check', 'check'],
+            ['Credit Card', 'credit_card']
+            ],
+          f.object.payment_method
+          ), {:"required" => "true"} %>
+        </div>
+    </div>
+
     <h3>Check Payment Notice</h3>
     <p>Please send your check to: NLGS P.O. Box 1771 Monument, CO 80132 Tax id#84-1287178</p>
 

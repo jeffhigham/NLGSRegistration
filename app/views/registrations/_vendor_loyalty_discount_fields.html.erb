@@ -3,12 +3,17 @@
     <fieldset>
       <legend>Vendor Loyalty Discount</legend>
       <p>Upon submitting this form, we will review your information and adjust your total cost accordingly. We will contact you with the final amount due and your payment options at that time.</p>
-        <%= f.label 'Do you qualify for Vendor loyalty discounts?' %>
-      <div class="field">
-        <%= f.radio_button :vendor_loyalty_discount, true %>
-        <%= label :vendor_loyalty_discount, 'Yes, I am pre-approved', value: true, class: 'inline' %><br/>
-        <%= f.radio_button :vendor_loyalty_discount, false %> 
-        <%= label :vendor_loyalty_discount, 'No', value: false , class: 'inline' %>
+
+      <div class="row">
+        <div class="large-4 columns">
+          <%= f.label 'Do you qualify for Vendor loyalty discounts?' %>
+            <%= f.select :vendor_loyalty_discount, options_for_select([
+            ['Yes', true],
+            ['No', false]
+            ],
+          f.object.vendor_loyalty_discount
+          ), {:"required" => "true", include_blank: true} %>
+        </div>
       </div>
     </fieldset>
   </div>

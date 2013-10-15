@@ -1,13 +1,13 @@
 <label>Title <small>required</small></label><br>
-<%= f.select :title, options_for_select({
-  'Manager '=> 'manager',
-  'National Sales Manager' => 'national_sales_manager',
-  'Owner' => 'owner',
-  'President' => 'president',
-  'US Sales Manager' => 'us_sales_manager',
-  'VP of Marketing' => 'vp_of_marketing',
-  'Other' => 'other'
-  },
+<%= f.select :title, options_for_select([
+  ['Manager ', 'manager'],
+  ['National Sales Manager', 'national_sales_manager'],
+  ['Owner', 'owner'],
+  ['President', 'president'],
+  ['US Sales Manager', 'us_sales_manager'],
+  ['VP of Marketing', 'vp_of_marketing'],
+  ['Other', 'other']
+  ],
 f.object.title
-), :"required" => "true" %>
+), {:"required" => "true", include_blank: true} %>
 <small class="error">Please select your registration type.</small>

@@ -36,8 +36,14 @@
   <% end %>
 </p>
 
-<p><strong>Contacts: </strong> <br/>
-  <% @registration.company.contacts.each do |c| %>
+<p><strong>Primary Contacts: </strong> <br/>
+  <% @registration.company.primary_contacts.each do |c| %>
+  <%= "#{c.first_name} #{c.last_name} #{c.title} #{c.phone} #{c.email}  (primary? #{c.primary_contact})" %><br/>
+  <% end %>
+</p>
+
+<p><strong>Secondary Contacts: </strong> <br/>
+  <% @registration.company.secondary_contacts.each do |c| %>
   <%= "#{c.first_name} #{c.last_name} #{c.title} #{c.phone} #{c.email}  (primary? #{c.primary_contact})" %><br/>
   <% end %>
 </p>

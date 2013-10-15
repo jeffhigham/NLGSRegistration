@@ -1,4 +1,9 @@
-<%= form_for @registration, :html => {:class => "custom", :'data-abide' => "true"}  do |f| %>
+<%= 
+form_for @registration, :html => {:class => "custom", :'data-abide' => "true"}  do |f| 
+#form_for @registration, :html => { :'data-abide' => "true"}  do |f| 
+
+
+  %>
   <% if @registration.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>

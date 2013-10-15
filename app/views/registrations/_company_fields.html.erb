@@ -60,9 +60,7 @@
 
   <div class="row">
     <div class="large-4 columns">
-      <label>State <small>required</small></label><br>
-      <%= f.text_field :state, :"required" => "true", :'placeholder' => "IL", size: 2 %>
-      <small class="error">Please provide a state.</small>
+    <%= render 'state_fields', f: f %>
     </div>
 
     <div class="large-4 columns">
