@@ -17,7 +17,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new
     @registration.companies.build
     @primary_contact = @registration.company.primary_contacts.build
-    @contacts = @registration.company.secondary_contacts.build
+    @secondary_contacts = @registration.company.secondary_contacts.build
     @industries = Industry.all
   end
 

@@ -7,7 +7,6 @@ class Company < ActiveRecord::Base
   accepts_nested_attributes_for :primary_contacts, allow_destroy: true
   accepts_nested_attributes_for :secondary_contacts, allow_destroy: true
 
-  
   has_many :company_industries
   has_many :industries, through: :company_industries
 

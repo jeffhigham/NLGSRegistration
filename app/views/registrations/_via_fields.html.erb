@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="large-12 columns">
+    <fieldset>
+      <legend>Vendors In Action (VIA) Sponsorship: $750</legend>
+      <p>Includes access to VIA functions for up to two attendees, special signage and a full-page black & white ad in the NLGS event directory (value $1500).</p>
+
+      <%= f.label 'Would you like to be a VIA sponsor?' %>
+      <div class="field">
+        <%= f.radio_button :via_sponsor, false %> 
+        <%= label :via_sponsor, 'No', value: false, class: 'inline'%>
+        <%= f.radio_button :via_sponsor, true %>
+        <%= label :via_sponsor, 'Yes', value: true, class: 'inline' %>
+      </div>
+    </fieldset>
+  </div>
+</div>
