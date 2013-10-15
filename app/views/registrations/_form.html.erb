@@ -32,121 +32,30 @@
 <!-- End Prototype Spaces -->
 
 <!-- VIA Start -->
-<fieldset>
-  <legend>Vendors In Action (VIA) Sponsorship: $750</legend>
-  <p>Includes access to VIA functions for up to two attendees, special signage and a full-page black & white ad in the NLGS event directory (value $1500).</p>
-
-  <%= f.label 'Would you like to be a VIA sponsor?' %>
-  <div class="field">
-    <%= f.radio_button :via_sponsor, false %> 
-    <%= label :via_sponsor, 'No', value: false %>
-    <%= f.radio_button :via_sponsor, true %>
-    <%= label :via_sponsor, 'Yes', value: true %>
-  </div>
-
-</fieldset>
+<%= render 'via_fields', f: f %>
 <!-- VIA End -->
 
-<!-- L&G Categories Start -->
-<fieldset>
-  <legend>RANK THE PRIORITY OF THE LAWN AND GARDEN PRODUCT CATEGORIES YOU WOULD LIKE TO PRESENT:</legend>
-  NOTE: CATEGORIES HAVE EXPANDED.<br/>
+<!-- L&G Priority Selection Start -->
+<%= render 'lg_priority_selections', f: f %>
+<!-- L&G Priority Selection End -->
 
-  <p>A maximum of 5 categories may be selected. You will be scheduled based on the priority of your ranking(s).
-  <em>*Questions?</em> &nbsp;   Call (719)488-0226 or (888)316-0226</p>
-
-  <p>Please rank the categories you would like to present by entering the category number in a priority field below, for example, Priority #1 "001", Priority #2 "026" etc.</p>
-
-  <%= render 'lg_category_fields', f: f %>
-  <%= render 'lg_categories' %>
-
-</fieldset>
-<!-- LG Categories End -->
-
-<!-- Pet Products Categories Start -->
-<fieldset>
-  <legend>RANK THE PRIORITY OF THE PET PRODUCT CATEGORIES YOU WOULD LIKE TO PRESENT:</legend>
-  NOTE: CATEGORIES HAVE EXPANDED.<br/>
-
-  <p>A maximum of 5 categories may be selected. You will be scheduled based on the priority of your ranking(s).
-  <em>*Questions?</em> &nbsp;   Call (719)488-0226 or (888)316-0226</p>
-
-  <p>Please rank the categories you would like to present by entering the category number in a priority field below, for example, Priority #1 "001", Priority #2 "026" etc.</p>
-
-<%= render 'pet_product_category_fields', f: f %>
-<%= render 'pet_product_categories'%>
-
-</fieldset>
-<!-- Pet Products Categories End -->
+<!-- Pet Products Selection Start -->
+<%= render 'pet_priority_selections', f: f %>
+<!-- Pet Products Selection End -->
 
 <!-- Loyalty Discount Start -->
-<fieldset>
-  <legend>Vendor Loyalty Discount</legend>
-  <p>Upon submitting this form, we will review your information and adjust your total cost accordingly. We will contact you with the final amount due and your payment options at that time.</p>
-    <%= f.label 'Do you qualify for Vendor loyalty discounts?' %>
-  <div class="field">
-    <%= f.radio_button :vendor_loyalty_discount, true %>
-    <%= label :vendor_loyalty_discount, 'Yes, I am pre-approved', value: true %><br/>
-    <%= f.radio_button :vendor_loyalty_discount, false %> 
-    <%= label :vendor_loyalty_discount, 'No', value: false %>
-  </div>
-</fieldset>
+<%= render 'vendor_loyalty_discount_fields', f: f %>
 <!-- Loyalty Discount End -->
 
+<!-- Conference Terms Start -->
+<%= render 'conference_terms',f: f %>
+<!-- Conference Terms End -->
+
 <!-- Payment Start -->
-<fieldset>
-  <legend>Payment</legend>
-  <i>Mastercard, Visa, Discover accepted. Sorry, no American Express cards accepted.</i>
-
-<p>If you select to pay by check, please use the above information, and the amount from your running total in the upper right-hand corner.
-
-If you select to pay by credit card, you will be taken to a secure page where you can enter your payment details. We utilize industry standard security methods and the latest in anti-fraud technology.</p>
-
-<%= f.label 'At this time would you like to pay in full or make a deposit?' %>
-<div class="field">
-<%= f.radio_button :pay_in_full, true %>
-<%= label :pay_in_full, 'Pay in Full', value: true %><br/>
-<%= f.radio_button :pay_in_full, false %> 
-<%= label :pay_in_full, 'Make a Deposit', value: false %>
-</div><br/>
-
-<%= f.label 'Select Payment Method.' %>
-<div class="field">
-<%= f.radio_button :payment_method, 'check' %>
-<%= label :payment_method, "Check Please send a check so we may assign your Vendor ID Scheduling Priority Number.", value: 'check' %><br/>
-<%= f.radio_button :payment_method, 'credit_card' %> 
-<%= label :payment_method, "Credit Card A Vendor ID Scheduling Priority Number will be assigned upon the processing of this payment.", value: 'credit_card' %>
-</div>
-<h3>Check Payment Notice</h3>
-<p>Please send your check to: NLGS P.O. Box 1771 Monument, CO 80132 Tax id#84-1287178</p>
-
-<h3>Credit Card Payment Notice</h3>
-<p>After you submit this registration form, please contact NLGS by phone to process your credit card payment.</p>
-
-<h3>Please Note</h3>
-<p><strong> Once you have clicked "Submit Vendor Registration", you will no longer be able to return to this form.</strong>
-<br/><em>*Questions?</em> &nbsp;   Contact us at: 
-PO Box 1771 Monument, CO 80132 • 888.316.0226 • 719.488.8168 • www.nlgshow.com • <a href="http://www.nlgshow.com/contact" target="_blank">email</a></p>
-
-<%= render 'credit_card_fields', f: f %>
-
-</fieldset>
+<%= render 'payment_fields', f: f %>
 <!-- Payment End -->
 
-<!-- Conference Terms Start -->
-<fieldset>
-  <legend>Conference Terms, Conditions, Deposit requirements, and Cancellation terms</legend>
-  <p>Payment Policy: $1000 deposit must accompany registration form to hold your priority scheduling position. 2nd payment of $1000 is due by Nov. 1, prior to year of NLGS event. Remainder of balance is due by February 1, the year of the NLGS event. Registrations returned without deposits are not considered registered and your priority position will not be assigned until deposit or full payment is received. Registration deadline is May 15, the year of the NLGS event. Registrations received after May 15 subject to $100 late fee. Participants with outstanding balances will be denied passwords to select buyers and access to the event. Cancellations must be submitted in writing and are subject to a $300 administrative fee if requested by October 30, prior to year of NLGS event. No refunds for incidental registration modifications. Any request to cancel after this date will not be honored and no monies will be refunded. </p>
 
-
-<h3>Acknowledgement</h3>
-
-<strong>I have read and accept the terms &amp; conditions on this registration form and the <a href="http://nlgshow.com/sites/all/themes/nlgshow_core/VendorConditions.html" target="_blank">"Rules and Regulations"</a>.</strong><br/>
-<%= f.label 'I Accept' %>
-<%= f.check_box :acknowledgement, :"required" => "true" %><br/>
-<small class="error">You must accept the terms &amp; conditions to register.</small>
-</fieldset>
-<!-- Conference Terms End -->
 
 
   <div class="actions">

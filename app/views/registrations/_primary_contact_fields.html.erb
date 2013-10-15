@@ -23,22 +23,20 @@
         <small class="error">Please provide a last name for this contact.</small>
       </div>
       <div class="large-4 columns">
-        <label>Title <small>required</small></label><br>
-        <%= f.text_field :title, :"required" => "true", :'placeholder' => "Sr. Manager" %>
-        <small class="error">Please provide a title for this contact.</small>
+        <%= render 'title_fields', f: f %>
       </div>
     
     </div>
 
     <div class="row">
       <div class="large-6 columns">
-        <label>Title <small>required</small></label><br>
+        <label>Phone <small>required</small></label><br>
         <%= f.text_field :phone, :"required" => "true", :'placeholder' => "(555) 555-5555" %>
         <small class="error">Please provide a phone number for this contact.</small>
       </div>
 
       <div class="large-6 columns">
-        <label>Title <small>required</small></label><br>
+        <label>Email <small>required</small></label><br>
         <%= f.text_field :email, :"required" => "true", :'placeholder' => "larry.jones@company123.com" %>
         <small class="error">Please provide an email address for this contact.</small>
       </div>

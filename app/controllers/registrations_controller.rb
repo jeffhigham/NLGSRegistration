@@ -16,7 +16,8 @@ class RegistrationsController < ApplicationController
   def new
     @registration = Registration.new
     @registration.companies.build
-    @contacts = @registration.company.contacts.build
+    @primary_contact = @registration.company.primary_contacts.build
+    @contacts = @registration.company.secondary_contacts.build
     @industries = Industry.all
   end
 
@@ -87,7 +88,8 @@ class RegistrationsController < ApplicationController
         
         companies_attributes: [ :id, :type, :company_type, :name, :division, :address,
         :city, :state, :zip,:country, :phone, :fax, :email, :website, :description,
-        contacts_attributes: [:id, :first_name, :last_name, :title, :email, :phone, :primary_contact, :_destroy],
+        primary_contacts_attributes: [:id, :type, :first_name, :last_name, :title, :email, :phone, :primary_contact, :_destroy],
+        secondary_contacts_attributes: [:id, :type, :first_name, :last_name, :title, :email, :phone, :primary_contact, :_destroy],
         company_industries: []
         ]
       )

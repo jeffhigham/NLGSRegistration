@@ -1,22 +1,32 @@
-<fieldset>
-  <legend>New Product / Prototype Review</legend>
-  <%= f.label 'Reserve the following Prototype spaces' %><br/>
-  <%= f.select :proto_spaces, options_for_select( 
-    [
-      ["None", 0],
-      ["1 Product: $250", 1],
-      ["2 Products: $350", 2],
-      ["3 Products: $450", 3],
-    ],
-    @registration.proto_spaces
-    ) %><br/>
+<div class="row">
+  <div class="large-12 columns">
+    <fieldset>
+      <legend>New Product / Prototype Review</legend>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.label 'Reserve the following Prototype spaces' %><br/>
+          <%= f.select :proto_spaces, options_for_select( 
+            [
+              ["None", 0],
+              ["1 Product: $250", 1],
+              ["2 Products: $350", 2],
+              ["3 Products: $450", 3],
+            ],
+            @registration.proto_spaces
+            ) %>
+        </div>
 
-  <%= f.label 'Select Display Type for additional Prototype spaces' %><br/>
-  <%= f.select :proto_display_type, options_for_select( 
-    [
-      ["Table", "table"],
-      ["Floor", "floor"],
-    ],
-    @registration.proto_display_type
-    ) %>
-</fieldset>
+        <div class="large-6 columns">
+          <%= f.label 'Select Display Type for additional Prototype spaces' %><br/>
+          <%= f.select :proto_display_type, options_for_select( 
+            [
+              ["Table", "table"],
+              ["Floor", "floor"],
+            ],
+            @registration.proto_display_type
+            ) %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>

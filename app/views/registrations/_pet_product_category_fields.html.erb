@@ -1,40 +1,42 @@
-<div class="field">
-  <label>Priority #1<small>required</small></label><br>
-  <%= text_field 'pet_priority', '1', :"required" => "true", 
-  :'placeholder' => "100", class: "pet-priority"
-  %>
-  <small class="error">Please provide priority #1</small>
-</div><br/>
+<div class="row">
+  <div class="large-2 columns">
+    <label>Priority #1<small>required</small></label><br>
+    <%= text_field 'pet_priority', '1', :"required" => "true", 
+    :'placeholder' => "100", class: "pet-priority"
+    %>
+    <small class="error">Please provide priority #1</small>
+  </div>
 
-<div class="field">
-  <label>Priority #2<small>required</small></label><br>
-  <%= text_field 'pet_priority','2', :"required" => "true", 
-  :'placeholder' => "106" , class: "pet-priority"
-  %>
-  <small class="error">Please provide priority #2</small>
-</div><br/>
+  <div class="large-2 columns">
+    <label>Priority #2<small>required</small></label><br>
+    <%= text_field 'pet_priority','2', :"required" => "true", 
+    :'placeholder' => "106" , class: "pet-priority"
+    %>
+    <small class="error">Please provide priority #2</small>
+  </div>
 
-<div class="field">
-  <label>Priority #3<small>required</small></label><br>
-  <%= text_field 'pet_priority', '3',:"required" => "true", 
-  :'placeholder' => "103", class: "pet-priority" 
-  %>
-  <small class="error">Please provide priority #3</small>
-</div><br/>
+  <div class="large-2 columns">
+    <label>Priority #3<small>required</small></label><br>
+    <%= text_field 'pet_priority', '3',:"required" => "true", 
+    :'placeholder' => "103", class: "pet-priority" 
+    %>
+    <small class="error">Please provide priority #3</small>
+  </div>
 
-<div class="field">
-  <label>Priority #4<small>required</small></label><br>
-  <%= text_field 'pet_priority', '4', :"required" => "true", 
-  :'placeholder' => "115", class: "pet-priority" 
-  %>
-  <small class="error">Please provide priority #4</small>
-</div><br/>
+  <div class="large-2 columns">
+    <label>Priority #4<small>required</small></label><br>
+    <%= text_field 'pet_priority', '4', :"required" => "true", 
+    :'placeholder' => "115", class: "pet-priority" 
+    %>
+    <small class="error">Please provide priority #4</small>
+  </div>
 
-<div class="field">
-  <label>Priority #5<small>required</small></label><br>
-  <%= text_field 'pet_priority', '5',:"required" => "true", 
-  :'placeholder' => "101", class: "pet-priority"
-  %>
-  <small class="error">Please provide priority #5</small>
-</div><br/>
-<%= f.hidden_field :pet_priorities %>
+  <div class="large-2 columns">
+    <label>Priority #5<small>required</small></label><br>
+    <%= text_field 'pet_priority', '5',:"required" => "true", 
+    :'placeholder' => "101", class: "pet-priority"
+    %>
+    <small class="error">Please provide priority #5</small>
+  </div>
+  <%= f.hidden_field :pet_priorities %>
+</div>
