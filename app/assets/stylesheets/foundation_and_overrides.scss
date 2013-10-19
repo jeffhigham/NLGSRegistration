@@ -1331,10 +1331,9 @@ $default-float: left;
 // This includes all of the foundation global elements that are needed to work with any of the other files.
 @import "foundation/variables";
 
-@import "normalize";
-
 // Foundation Components
 @import
+  "normalize",
   "foundation/components/global",
   "foundation/components/grid",
   "foundation/components/visibility",

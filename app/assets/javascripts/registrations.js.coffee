@@ -29,3 +29,37 @@ jQuery ->
     $('#registration_pet_priorities').val(priorities)
     console.log "Adding Pet Priorities: #{priorities}"
     console.log "Pet Registration Priorities: #{$('#registration_pet_priorities').val()}"
+
+$(document).ready ->
+
+  if $('#registration_lg_priorities').length
+    registration_lg_priorities = $('#registration_lg_priorities').val()
+    if registration_lg_priorities.length > 0
+      lg_priorities = registration_lg_priorities.split ","
+      for priority,index in lg_priorities
+        $("#lg_priority_#{index+1}").val(lg_priorities[index])
+        # console.log("Populating #lg_priority_#{index+1} with %s", lg_priorities[index])
+
+  if $('#registration_pet_priorities').length
+    registration_pet_priorities = $('#registration_pet_priorities').val()
+    if registration_pet_priorities.length > 0
+      pet_priorities = registration_pet_priorities.split ","
+      for priority,index in pet_priorities
+        $("#pet_priority_#{index+1}").val(pet_priorities[index])
+        # console.log("Populating #pet_priority_#{index+1} with %s", pet_priorities[index])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -17,7 +17,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new
     @registration.companies.build
     @primary_contact = @registration.company.primary_contacts.build
-    @secondary_contacts = @registration.company.secondary_contacts.build
+    @secondary_contacts = 2.times { @registration.company.secondary_contacts.build }
     @industries = Industry.all
   end
 
@@ -30,7 +30,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(registration_params)
-
+    
     respond_to do |format|
       if @registration.save
         @registration.company.update_industries(params[:company_industries])

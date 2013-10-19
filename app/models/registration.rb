@@ -13,6 +13,7 @@ class Registration < ActiveRecord::Base
 
   before_create :generate_registration_id
 
+
   def company
     self.companies.first
   end
