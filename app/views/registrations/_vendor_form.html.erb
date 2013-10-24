@@ -1,0 +1,68 @@
+<%= form_for @registration, :html => {:class => "custom", :'data-abide' => "true"}  do |f|  %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="large-12 large-centered columns text-center" style="background-color: #000; height:74px;">
+<!--     <h3 style="color: #FFF; font-family: 'Lucida Grande', Tahoma, Arial, Verdana, sans-serif;">VENDOR REGISTRATION</h3> -->
+  <img src="/img/nlglogo_vendor.png"/>
+  </div>
+</div>
+
+<!-- Flash Notifications -->
+<div class="row">
+  <div class="12-large columns" id="flash"></div>
+</div>
+
+<!-- Company Info -->
+<%= f.fields_for :companies, @registration.company do |builder| %>
+  <%= render 'company_fields', f: builder %>
+<% end %>  
+<!-- End Company Info -->
+
+<!-- Primary POP Spaces -->
+<%= render 'registrations/vendor_form/primary_pop_spaces', f: f %>
+<!-- End Primary POP Spaces -->
+
+<!-- Additional POP Spaces -->
+<%= render 'registrations/vendor_form/pop_spaces', f: f %>
+<!-- End Additional POP Spaces -->
+
+<!-- Prototype Spaces -->
+<%= render 'registrations/vendor_form/proto_spaces', f: f %>
+<!-- End Prototype Spaces -->
+
+<!-- VIA Start -->
+<%= render 'registrations/vendor_form/via_fields', f: f %>
+<!-- VIA End -->
+
+<!-- L&G Priority Selection Start -->
+<%= render 'registrations/vendor_form/lg_priority_selections', f: f %>
+<!-- L&G Priority Selection End -->
+
+<!-- Pet Products Selection Start -->
+<%= render 'registrations/vendor_form/pet_priority_selections', f: f %>
+<!-- Pet Products Selection End -->
+
+<!-- Loyalty Discount Start -->
+<%= render 'registrations/vendor_form/vendor_loyalty_discount_fields', f: f %>
+<!-- Loyalty Discount End -->
+
+<!-- Conference Terms Start -->
+<%= render 'conference_terms',f: f %>
+<!-- Conference Terms End -->
+
+<!-- Payment Start -->
+<%= render 'registrations/vendor_form/payment_fields', f: f %>
+<!-- Payment End -->
+
+<% end %>

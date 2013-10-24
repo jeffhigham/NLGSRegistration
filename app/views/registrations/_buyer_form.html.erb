@@ -1,0 +1,59 @@
+<%= form_for @registration, :html => {:class => "custom", :'data-abide' => "true"}  do |f|  %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="large-12 large-centered columns text-center" style="background-color: #000; height:74px;">
+    <img src="/img/nlglogo_buyer.png"/>
+  </div>
+</div>
+
+<!-- Flash Notifications -->
+<div class="row">
+  <div class="12-large columns" id="flash"></div>
+</div>
+
+<!-- Company Info -->
+<%= f.fields_for :companies, @registration.company do |builder| %>
+  <%= render 'registrations/buyer_form/company_fields', f: builder %>
+<% end %>  
+<!-- End Company Info -->
+
+<!-- Buyer Company Metrics -->
+<%= render 'registrations/buyer_form/company_metrics', f: f %>
+<!-- End Buyer Company Metrics -->
+
+<!-- Buyer Registration Fee -->
+<%= render 'registrations/buyer_form/registration_fee', f: f %>
+<!-- End Buyer Registration Fee -->
+
+<!-- Buyer Airline Ticket -->
+<%= render 'registrations/buyer_form/airline_ticket', f: f %>
+<!-- End Buyer Airline Ticket -->
+
+<!-- Conference Terms Start -->
+<%= render 'registrations/buyer_form/conference_terms',f: f %>
+<!-- Conference Terms End -->
+
+<!-- Acknoledgement Start -->
+<%= render 'registrations/buyer_form/acknowledgement',f: f %>
+<!-- Acknoledgement End -->
+
+<!-- LG Category Selection Fields -->
+<%= render 'registrations/buyer_form/lg_category_selection_fields',f: f %>
+<!-- End LG Category Selection Fields-->
+
+<!-- Payment Start -->
+<%= render 'registrations/buyer_form/payment_fields', f: f %>
+<!-- Payment End -->
+
+<% end %>

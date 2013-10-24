@@ -1,0 +1,25 @@
+<div class="row vendor">
+  <div class="large-12 columns">
+    <fieldset>
+      <legend>Primary Point of Purchase (POP) Space Reservations</legend>
+ 
+      <div class="row">
+        <div class="large-6 columns">
+          <span>One 2'x6' Point of Purchase space included with Senior (Primary) Contact Registration Fee</span>
+        </div>
+        <div class="large-6 columns">
+          <%= f.label 'Select Display Type for Primary POP space' %><br/>
+          <%= f.select :primary_pop_display_type, options_for_select( 
+            [
+              ["Table", "table"],
+              ["Floor", "floor"],
+            ],
+            @registration.primary_pop_display_type
+            ) %>
+        </div>
+      </div>
+
+
+    </fieldset>
+  </div>
+</div>

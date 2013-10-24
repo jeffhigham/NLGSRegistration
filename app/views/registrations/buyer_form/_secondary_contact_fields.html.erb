@@ -1,0 +1,46 @@
+<fieldset style="border:0px">
+<div clas="row">
+  <div class="large-12 columns">
+    
+    <div class="row">
+      <div class="large-4 columns">
+        <label>First Name <small>required</small></label><br>
+        <%= f.text_field :first_name, :"required" => "true", :'placeholder' => "Larry" %>
+        <small class="error">Please provide a first name for this contact.</small>
+      </div>
+
+      <div class="large-4 columns">
+        <label>Last Name <small>required</small></label><br>
+        <%= f.text_field :last_name, :"required" => "true", :'placeholder' => "Jones" %>
+        <small class="error">Please provide a last name for this contact.</small>
+      </div>
+      <div class="large-4 columns">
+        <%= render 'title_fields', f: f %>
+      </div>
+    
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Phone <small>required</small></label><br>
+        <%= f.text_field :phone, :"required" => "true", :'placeholder' => "(555) 555-5555" %>
+        <small class="error">Please provide a phone number for this contact.</small>
+      </div>
+
+      <div class="large-6 columns">
+        <label>Email <small>required</small></label><br>
+        <%= f.text_field :email, :"required" => "true", :'placeholder' => "larry.jones@company123.com" %>
+        <small class="error">Please provide an email address for this contact.</small>
+      </div>
+      <div class="row">
+        <div class="large-12 columns text-right">
+          <%= f.hidden_field :_destroy %>
+          <%= link_to "Remove This Contact", '#', class: "remove_fields" %>
+        </div>
+      </div>
+    </div>
+  
+  </div>  
+</div>
+  <hr/>
+</fieldset>

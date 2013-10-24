@@ -23,8 +23,11 @@
 
   <body>
   <div id="container" style="margin-top: 30px">
-
-    <%= yield %>
+    <div class="row" style="background-color:#FFF">
+      <div class="large-12 large-centered columns shadow">
+        <%= yield %>
+      </div>
+    </div>
   
   </div>
     <%= javascript_include_tag "application" %>

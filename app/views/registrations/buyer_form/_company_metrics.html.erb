@@ -1,0 +1,39 @@
+<div clas="row">
+  <div class="large-12 columns">
+  <fieldset>
+    <legend>Company Size Information</legend>
+    
+    <div class="row">
+        <div class="large-4 columns">
+          <%= f.label 'Annual L&G Volume' %>
+            <%= f.select :buyer_annual_lg_volume, options_for_select([
+            ['Under $10 Million', 'Under $10 Million'],
+            ['Over $10 Million', 'Over $10 Million']
+            ],
+          f.object.buyer_annual_lg_volume
+          ), {:"required" => "true" } %>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label># of Stores/Customers/Circulation <small>required</small></label><br>
+        <%= f.text_field :buyer_num_stores, :"required" => "true" %>
+        <small class="error">Please provide stores and customer information.</small>
+      </div>
+
+      <div class="large-4 columns">
+        <label>Areas Served<small>required</small></label><br>
+        <%= f.text_field :buyer_areas_served, :"required" => "true" %>
+        <small class="error">Please specify areas served.</small>
+      </div>
+
+      <div class="large-4 columns">
+        <label>Average L&amp;G Sq. Ft<small>required</small></label><br>
+        <%= f.text_field :buyer_avg_sqft, :"required" => "true" %>
+        <small class="error">Please specify average L&amp;G square feet.</small>
+      </div>
+
+  </fieldset>
+  </div>  
+</div>

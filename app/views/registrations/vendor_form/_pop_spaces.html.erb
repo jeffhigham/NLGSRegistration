@@ -1,10 +1,13 @@
-<div class="row">
+<div class="row vendor">
   <div class="large-12 columns">
     <fieldset>
-      <legend>Additional Point of Purchase Spaces: $100 each</legend>
+      <legend>Additional Point of Purchase (POP) Space Reservations</legend>
+      <span>The first POP space is included with the primary contact registration.  Additional POP spaces are $100.00 each.</span>
+
+
       <div class="row">
         <div class="large-6 columns">
-          <%= f.label 'Number of additional POP spaces' %><br/>
+          <%= f.label 'Additional Pop Space Size' %><br/>
           <%= f.select :pop_spaces, options_for_select( 
             [
               ["None", 0],
@@ -26,6 +29,8 @@
             ) %>
         </div>
       </div>
+
+
     </fieldset>
   </div>
 </div>

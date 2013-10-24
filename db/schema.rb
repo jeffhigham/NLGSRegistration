@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014233242) do
+ActiveRecord::Schema.define(version: 20131023210026) do
 
   create_table "companies", force: true do |t|
     t.string   "type"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20131014233242) do
     t.text     "size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "registration_id"
   end
 
   create_table "prototype_spaces", force: true do |t|
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20131014233242) do
     t.text     "size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "registration_id"
   end
 
   create_table "registrations", force: true do |t|
@@ -91,10 +93,17 @@ ActiveRecord::Schema.define(version: 20131014233242) do
     t.string   "proto_display_type"
     t.string   "lg_priorities"
     t.string   "pet_priorities"
-    t.boolean  "acknowledgement",         default: false
-    t.boolean  "vendor_loyalty_discount", default: false
-    t.boolean  "pay_in_full",             default: true
-    t.string   "payment_method",          default: "credit_card"
+    t.boolean  "acknowledgement",          default: false
+    t.boolean  "vendor_loyalty_discount",  default: false
+    t.boolean  "pay_in_full",              default: true
+    t.string   "payment_method",           default: "credit_card"
+    t.string   "primary_pop_display_type"
+    t.integer  "buyer_num_stores"
+    t.string   "buyer_areas_served"
+    t.integer  "buyer_avg_sqft"
+    t.string   "buyer_annual_lg_volume"
+    t.string   "lg_categories"
+    t.string   "pet_categories"
   end
 
 end

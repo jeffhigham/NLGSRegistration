@@ -1,7 +1,5 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
@@ -16,6 +14,7 @@ jQuery ->
 
   $('a').addClass("tiny radius button")
 
+  # Vendor Selections
   $('.lg-priority').on 'blur', (event) ->
     event.preventDefault()
     priorities = "#{$($('.lg-priority')[0]).val()},#{$($('.lg-priority')[1]).val()},#{$($('.lg-priority')[2]).val()},#{$($('.lg-priority')[3]).val()},#{$($('.lg-priority')[4]).val()}"
@@ -29,6 +28,28 @@ jQuery ->
     $('#registration_pet_priorities').val(priorities)
     console.log "Adding Pet Priorities: #{priorities}"
     console.log "Pet Registration Priorities: #{$('#registration_pet_priorities').val()}"
+
+  # Buyer Selections
+  $('.lg_category_selection').on 'change', (event) ->
+    selected = []
+    for lg_category in $('.lg_category_selection')
+      if lg_category.checked
+        category = lg_category.id.split('_').pop()
+        selected.push(category)
+    # console.log selected.toString()
+    $('#registration_lg_categories').val(selected.toString())
+    console.log $('#registration_lg_categories').val()
+  
+  $('.pet_category_selection').on 'change', (event) ->
+    selected = []
+    for pet_category in $('.pet_category_selection')
+      if pet_category.checked
+        category = pet_category.id.split('_').pop()
+        selected.push(category)
+    # console.log selected.toString()
+    $('#registration_pet_categories').val(selected.toString())
+    console.log $('#registration_pet_categories').val()
+
 
 $(document).ready ->
 

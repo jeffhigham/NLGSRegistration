@@ -9,6 +9,13 @@ class Registration < ActiveRecord::Base
   has_many :vendors, dependent: :destroy
   #accepts_nested_attributes_for :vendors, allow_destroy: true
 
+  # has_many :pop_spaces, dependent: :destroy
+  # accepts_nested_attributes_for :pop_spaces, allow_destroy: true
+
+  # has_many :prototype_spaces, dependent: :destroy
+  # accepts_nested_attributes_for :prototype_spaces, allow_destroy: true
+
+
   attr_accessor :cc_name, :cc_number, :cc_exp_year, :cc_exp_month, :cc_code
 
   before_create :generate_registration_id

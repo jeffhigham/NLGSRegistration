@@ -1,0 +1,25 @@
+<!-- Registration Type & Industries -->
+<div class="row">
+  <div class="large-6 columns">
+    <fieldset>
+      <legend>Registration Type</legend>
+      <%= f.select :type, options_for_select( 
+        CompanyType.all.collect {|t| [t.description, t.class_name] }, @registration.company.type
+        ), {:"required" => "true", include_blank: true} %>
+      <small class="error">Please select your registration type.</small>
+    </fieldset>
+  </div>
+  <div class="large-6 columns">
+    <fieldset>
+      <legend>Industry</legend>
+      <%= 
+        select_tag "company_industries",
+          options_for_select(Industry.all.collect {|i| [i.name, i.id]}, 
+          @registration.company.company_industries.all.collect {|i| i.industry_id} ),
+          :multiple => true, :"required" => "true"
+      %>
+      <small class="error">Please select one or more industries.</small>
+    </fieldset>
+  </div>
+</div>
+<!-- End Registration Type & Industries -->
