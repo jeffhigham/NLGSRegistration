@@ -9,18 +9,23 @@ select {
   color: #000;
 }
 
-.vendor {
-  border: 1px solid blue;
-}
+// .vendor {
+//   border: 1px solid blue;
+// }
 
-.buyer {
-  border: 1px solid green;
-}
+// .buyer {
+//   border: 1px solid green;
+// }
 
-.mfrep {
-  border: 1px solid orange;
-}
+// .mfrep {
+//   border: 1px solid orange;
+// }
 
-.media {
-  border: 1px solid yellow;
+// .media {
+//   border: 1px solid yellow;
+// }
+
+.dark {
+  background-color: #222;
+  border-color: #999;
 }

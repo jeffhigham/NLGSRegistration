@@ -2,7 +2,7 @@
   <div class="large-12 columns">
     <fieldset>
       <legend>New Product / Prototype Review</legend>
-      <div class="row">
+      <div class="row proto-spaces">
         <div class="large-6 columns">
           <%= f.label 'Reserve the following Prototype spaces' %><br/>
           <%= f.select :proto_spaces, options_for_select( 
@@ -13,7 +13,7 @@
               ["3 Products: $450", 3],
             ],
             @registration.proto_spaces
-            ) %>
+            ), {:"required" => "true", include_blank: true} %>
         </div>
 
         <div class="large-6 columns">
@@ -24,7 +24,7 @@
               ["Floor", "floor"],
             ],
             @registration.proto_display_type
-            ) %>
+            ), {:"required" => "true", include_blank: true} %>
         </div>
       </div>
     </fieldset>

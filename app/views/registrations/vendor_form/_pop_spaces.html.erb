@@ -5,7 +5,7 @@
       <span>The first POP space is included with the primary contact registration.  Additional POP spaces are $100.00 each.</span>
 
 
-      <div class="row">
+      <div class="row pop-spaces">
         <div class="large-6 columns">
           <%= f.label 'Additional Pop Space Size' %><br/>
           <%= f.select :pop_spaces, options_for_select( 
@@ -16,7 +16,7 @@
               ["Three Add'l POP (2'x6')", 3],
             ],
             @registration.pop_spaces
-            ) %>
+            ), {:"required" => "true", include_blank: true} %>
         </div>
         <div class="large-6 columns">
           <%= f.label 'Select Display Type for additional POP spaces' %><br/>
@@ -26,7 +26,7 @@
               ["Floor", "floor"],
             ],
             @registration.pop_display_type
-            ) %>
+            ), {:"required" => "true", include_blank: true} %>
         </div>
       </div>
 

@@ -3,7 +3,7 @@
     <fieldset>
       <legend>Primary Point of Purchase (POP) Space Reservations</legend>
  
-      <div class="row">
+      <div class="row primary-pop-space">
         <div class="large-6 columns">
           <span>One 2'x6' Point of Purchase space included with Senior (Primary) Contact Registration Fee</span>
         </div>
@@ -15,7 +15,7 @@
               ["Floor", "floor"],
             ],
             @registration.primary_pop_display_type
-            ) %>
+            ), {:"required" => "true", include_blank: true} %>
         </div>
       </div>
 

@@ -86,7 +86,7 @@ class RegistrationsController < ApplicationController
         :pop_display_type,:proto_spaces, :proto_display_type, :via_sponsor, :lg_priorities, :pet_priorities,
         :acknowledgement, :vendor_loyalty_discount, :pay_in_full, :payment_method, :cc_number,
         :cc_exp_month, :cc_exp_year, :cc_code, :cc_name, :primary_pop_display_type, :buyer_num_stores,
-        :buyer_areas_served, :buyer_avg_sqft, :buyer_annual_lg_volume,
+        :buyer_areas_served, :buyer_avg_sqft, :buyer_annual_lg_volume, :lg_categories, :pet_categories,
 
         companies_attributes: [ :id, :type, :company_type, :name, :division, :address,
         :city, :state, :zip,:country, :phone, :fax, :email, :website, :description,

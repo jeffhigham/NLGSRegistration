@@ -1,13 +1,12 @@
 NLGSRegistration::Application.routes.draw do
   
-  resources :industries
-
-  resources :contacts
-
   resources :registrations
-  resources :companies
-  resources :buyers
-  resources :vendors
+  get 'registrations/new/:type' => 'registrations#new'
+  # resources :companies
+  # resources :buyers
+  # resources :vendors
+  # resources :industries
+  # resources :contacts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

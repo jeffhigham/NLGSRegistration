@@ -1,55 +1,67 @@
-registrations/vendor_form/<div class="row">
+<div class="row">
   <div class="large-12 columns">
-    <fieldset>
-      <legend>Payment</legend>
-      <i>Mastercard, Visa, Discover accepted. Sorry, no American Express cards accepted.</i>
 
-    <p>If you select to pay by check, please use the above information, and the amount from your running total in the upper right-hand corner.
-
-    If you select to pay by credit card, you will be taken to a secure page where you can enter your payment details. We utilize industry standard security methods and the latest in anti-fraud technology.</p>
-
-    <div class="row">
-        <div class="large-4 columns">
-          <%= f.label 'At this time would you like to pay in full or make a deposit?' %>
-            <%= f.select :pay_in_full, options_for_select([
-            ['Pay in full', true],
-            ['Make a deposit', false]
-            ],
-          f.object.pay_in_full
-          ), {:"required" => "true", include_blank: true } %>
+    <% if action_name == 'edit' %>
+      <div class="row" style="margin-top: 20px">
+        <div class="large-12 columns text-center">
+          <hr />
+          <%= f.submit :class => "large radius button success" %>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="large-4 columns">
-          <%= f.label 'Select Payment Method.' %>
-            <%= f.select :payment_method, options_for_select([
-            ['Check', 'check'],
-            ['Credit Card', 'credit_card']
-            ],
-          f.object.payment_method
-          ), {:"required" => "true", include_blank: true} %>
-        </div>
-    </div>
-
-    <h3>Check Payment Notice</h3>
-    <p>Please send your check to: NLGS P.O. Box 1771 Monument, CO 80132 Tax id#84-1287178</p>
-
-    <h3>Credit Card Payment Notice</h3>
-    <p>After you submit this registration form, please contact NLGS by phone to process your credit card payment.</p>
-
-    <h3>Please Note</h3>
-    <p><strong> Once you have clicked "Submit Vendor Registration", you will no longer be able to return to this form.</strong>
-    <br/><em>*Questions?</em> &nbsp;   Contact us at: 
-    PO Box 1771 Monument, CO 80132 • 888.316.0226 • 719.488.8168 • www.nlgshow.com • <a href="http://www.nlgshow.com/contact" target="_blank">email</a></p>
-
-    <%= render 'registrations/vendor_form/credit_card_fields', f: f %>
-    <div class="row" style="margin-top: 20px">
-      <div class="large-12 columns text-center">
-        <%= f.submit :class => "large radius button success" %>
       </div>
-    </div>
+    <% else %>
 
-    </fieldset>
+      <fieldset>
+        <legend>Payment</legend>
+        <i>Mastercard, Visa, Discover accepted. Sorry, no American Express cards accepted.</i>
+
+      <p>If you select to pay by check, please use the above information, and the amount from your running total in the upper right-hand corner.
+
+      If you select to pay by credit card, you will be taken to a secure page where you can enter your payment details. We utilize industry standard security methods and the latest in anti-fraud technology.</p>
+
+      <div class="row">
+          <div class="large-4 columns">
+            <%= f.label 'At this time would you like to pay in full or make a deposit?' %>
+              <%= f.select :pay_in_full, options_for_select([
+              ['Pay in full', true],
+              ['Make a deposit', false]
+              ],
+            f.object.pay_in_full
+            ), {:"required" => "true", include_blank: true } %>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="large-4 columns">
+            <%= f.label 'Select Payment Method.' %>
+              <%= f.select :payment_method, options_for_select([
+              ['Check', 'check'],
+              ['Credit Card', 'credit_card']
+              ],
+            f.object.payment_method
+            ), {:"required" => "true", include_blank: true} %>
+          </div>
+      </div>
+
+      <h3>Check Payment Notice</h3>
+      <p>Please send your check to: NLGS P.O. Box 1771 Monument, CO 80132 Tax id#84-1287178</p>
+
+      <h3>Credit Card Payment Notice</h3>
+      <p>After you submit this registration form, please contact NLGS by phone to process your credit card payment.</p>
+
+      <h3>Please Note</h3>
+      <p><strong> Once you have clicked "Submit Vendor Registration", you will no longer be able to return to this form.</strong>
+      <br/><em>*Questions?</em> &nbsp;   Contact us at: 
+      PO Box 1771 Monument, CO 80132 • 888.316.0226 • 719.488.8168 • www.nlgshow.com • <a href="http://www.nlgshow.com/contact" target="_blank">email</a></p>
+
+      <%= render 'registrations/vendor_form/credit_card_fields', f: f %>
+      <div class="row" style="margin-top: 20px">
+        <div class="large-12 columns text-center">
+          <%= f.submit "Submit Vendor Registration", :class => "large radius button success" %>
+        </div>
+      </div>
+
+      </fieldset>
+    <% end %>
+
   </div>
 </div>

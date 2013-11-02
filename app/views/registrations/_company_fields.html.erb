@@ -3,15 +3,6 @@
 <div class="row">
   <div class="large-6 columns">
     <fieldset>
-      <legend>Registration Type</legend>
-      <%= f.select :type, options_for_select( 
-        CompanyType.all.collect {|t| [t.description, t.class_name] }, @registration.company.type
-        ), {:"required" => "true", include_blank: true} %>
-      <small class="error">Please select your registration type.</small>
-    </fieldset>
-  </div>
-  <div class="large-6 columns">
-    <fieldset>
       <legend>Industry</legend>
       <%= 
         select_tag "company_industries",
@@ -21,6 +12,7 @@
       %>
       <small class="error">Please select one or more industries.</small>
     </fieldset>
+    <%= f.hidden_field :type, value: "Vendor" %>
   </div>
 </div>
 <!-- End Registration Type & Industries -->
@@ -138,7 +130,7 @@
       <%= f.fields_for :secondary_contacts, @secondary_contacts do |builder| %>
         <%= render 'secondary_contact_fields', {f: builder} %>
       <% end %><br/>
-      <%= link_to_add_contact "Add Contact", f, :secondary_contacts %>
+      <%= link_to_add_contact "Add Attendee", f, :secondary_contacts , "registrations"%>
     </fieldset>
   </div>
 </div>

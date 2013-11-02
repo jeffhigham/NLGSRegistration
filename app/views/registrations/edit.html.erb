@@ -1,1 +1,8 @@
-<%= render 'form' %>
+<%=
+type = @registration.companies.first.type
+if type == 'Vendor'
+  render 'vendor_form'
+elsif type == 'Buyer' 
+  render 'buyer_form'
+end
+%>
